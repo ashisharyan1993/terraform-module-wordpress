@@ -33,21 +33,13 @@ variable "wp_password" {
 
 variable "wp_mail" {
   description = "Wordpress email"
-  default = "kumar1010ashish@gmail.com"
+  default = "test@gmail.com"
 }
 
-variable "db_endpoint_arn" {
-  
-}
+variable "db_endpoint_arn" {}
 
-variable "vpc_id" {
-  
-}
+variable "vpc_id" {}
 
-variable "private_subnet" {
-  
-}
+variable "private_subnet" {}
 
-variable "public_subnet" {
-  
-}
+variable "public_subnet" {}
