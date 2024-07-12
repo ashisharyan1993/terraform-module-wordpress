@@ -53,6 +53,7 @@ resource "aws_ecs_service" "wp-ecs-svc" {
     name = "wp-ecs-svc"
     cluster = aws_ecs_cluster.wordpress_cluster.id
     task_definition = aws_ecs_task_definition.wordpress_task.arn
+    enable_ecs_managed_tags = true
     desired_count = 1
     launch_type     =  "FARGATE"
 
