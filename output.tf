@@ -1,0 +1,1 @@
+#Output the RDS endpoint for WordPress configuration
