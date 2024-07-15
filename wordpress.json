@@ -48,7 +48,7 @@
   {
     "name": "wordpress-plugin",
     "image": "wordpress:latest",
-    "essential": false,
+    "essential": true,
     "command": [
       "sh", "-c",
       "wp plugin install amazon-s3-and-cloudfront --activate"
