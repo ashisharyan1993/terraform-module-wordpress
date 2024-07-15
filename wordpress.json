@@ -46,7 +46,7 @@
     ]
   },
   {
-    "name": "wordpress",
+    "name": "wordpress-plugin",
     "image": "wordpress:latest",
     "essential": false,
     "command": [
