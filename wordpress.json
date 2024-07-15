@@ -1,0 +1,88 @@
+[
+  {
+    "name": "wordpress",
+    "image": "wordpress:latest",
+	"essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "environment": [
+      {
+        "name": "WORDPRESS_DB_HOST",
+        "value": "${db_host}"
+      },
+      {
+        "name": "WORDPRESS_DB_USER",
+        "value": "${db_user}"
+      },
+      {
+        "name": "WORDPRESS_DB_PASSWORD",
+        "value": "${db_password}"
+      },
+      {
+        "name": "WORDPRESS_DB_NAME",
+        "value": "wordpress"
+      }
+    ]
+  },
+  {
+    "name": "wordpress",
+    "image": "wordpress:latest",
+	"essential": false,
+	"command": [
+	"sh", "-c",
+    "wp core install  --title='${WORDPRESS_TITLE}' " +
+    "--admin_user='${WORDPRESS_USER}' " +
+    "--admin_password='${WORDPRESS_PASSWORD}' " +
+    "--admin_email='${WORDPRESS_MAIL}' " +
+    "--language='${WORDPRESS_LANGUAGE}' && " +
+    "wp plugin install amazon-s3-and-cloudfront --activate"
+	],
+	"dependsOn": [{
+		"containerName": "wordpress"
+		"condition": "START"
+  }]
+    "environment": [
+      {
+        "name": "WORDPRESS_DB_HOST",
+        "value": "${db_host}"
+      },
+      {
+        "name": "WORDPRESS_DB_USER",
+        "value": "${db_user}"
+      },
+      {
+        "name": "WORDPRESS_DB_PASSWORD",
+        "value": "${db_password}"
+      },
+      {
+        "name": "WORDPRESS_DB_NAME",
+        "value": "wordpress"
+      },
+      {
+        "name": "WORDPRESS_TITLE",
+        "value": "${wp_title}"
+      },
+      {
+        "name": "WORDPRESS_USER",
+        "value": "${wp_user}"
+      },
+      {
+        "name": "WORDPRESS_PASSWORD",
+        "value": "${wp_password}"
+      },
+      {
+        "name": "WORDPRESS_MAIL",
+        "value": "${wp_mail}"
+      },
+	  {
+		"name": "WORDPRESS_LANGUAGE"
+		"value": "en_US"
+	  }
+    ]
+  }
+]
