@@ -20,7 +20,7 @@ resource "aws_ecs_cluster" "wordpress_cluster" {
 
 # S3 bucket for media storage
 resource "aws_s3_bucket" "wordpress_media_bucket" {
-  bucket = "wordpress-media-bucket"
+  bucket = "wordpress-media-bucket-vow"
 }
 
 resource "aws_s3_bucket_ownership_controls" "wordpress_media_bucket_owner" {
