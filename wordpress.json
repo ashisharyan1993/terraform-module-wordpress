@@ -45,7 +45,7 @@
     ],
     "command": [
     "sh", "-c",
-    "wp core install  --title='${WORDPRESS_TITLE}' --admin_user='${WORDPRESS_USER}' --admin_password='${WORDPRESS_PASSWORD}' --admin_email='${WORDPRESS_MAIL}' --language='${WORDPRESS_LANGUAGE}' && wp plugin install amazon-s3-and-cloudfront --activate"
+    "wp core install  --title='${wp_title}' --admin_user='${wp_user}' --admin_password='${wp_password}' --admin_email='${wp_mail}' --language='en_US' && wp plugin install amazon-s3-and-cloudfront --activate"
     ]
   }
 ]
