@@ -35,13 +35,8 @@
     "essential": false,
     "command": [
     "sh", "-c",
-    "wp core install  --title='${WORDPRESS_TITLE}' " +
-    "--admin_user='${WORDPRESS_USER}' " +
-    "--admin_password='${WORDPRESS_PASSWORD}' " +
-    "--admin_email='${WORDPRESS_MAIL}' " +
-    "--language='${WORDPRESS_LANGUAGE}' && " +
-    "wp plugin install amazon-s3-and-cloudfront --activate"
-	],
+    "wp core install  --title='${WORDPRESS_TITLE}' --admin_user='${WORDPRESS_USER}' --admin_password='${WORDPRESS_PASSWORD}' --admin_email='${WORDPRESS_MAIL}' --language='${WORDPRESS_LANGUAGE}' && wp plugin install amazon-s3-and-cloudfront --activate"
+    ],
    "dependsOn": [{
 	"containerName": "wordpress",
 	"condition": "START"
