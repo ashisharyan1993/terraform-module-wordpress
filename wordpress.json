@@ -32,9 +32,9 @@
   {
     "name": "wordpress",
     "image": "wordpress:latest",
-	"essential": false,
-	"command": [
-	"sh", "-c",
+    "essential": false,
+    "command": [
+    "sh", "-c",
     "wp core install  --title='${WORDPRESS_TITLE}' " +
     "--admin_user='${WORDPRESS_USER}' " +
     "--admin_password='${WORDPRESS_PASSWORD}' " +
@@ -42,10 +42,10 @@
     "--language='${WORDPRESS_LANGUAGE}' && " +
     "wp plugin install amazon-s3-and-cloudfront --activate"
 	],
-	"dependsOn": [{
-		"containerName": "wordpress"
-		"condition": "START"
-  }]
+   "dependsOn": [{
+	"containerName": "wordpress"
+	"condition": "START"
+  }],
     "environment": [
       {
         "name": "WORDPRESS_DB_HOST",
@@ -79,10 +79,10 @@
         "name": "WORDPRESS_MAIL",
         "value": "${wp_mail}"
       },
-	  {
-		"name": "WORDPRESS_LANGUAGE"
-		"value": "en_US"
-	  }
+      {
+	"name": "WORDPRESS_LANGUAGE",
+	"value": "en_US"
+      }
     ]
   }
 ]
